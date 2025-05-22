@@ -85,7 +85,6 @@ class About extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // Ảnh chiếm khoảng 2/3 chiều cao
                       SizedBox(
                         height: itemSize * 2 / 3,
                         width: double.infinity,
@@ -97,7 +96,6 @@ class About extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 8),
-                      // Username
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8),
                         child: Text(
@@ -112,7 +110,6 @@ class About extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 4),
-                      // Description chiếm phần còn lại
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8),

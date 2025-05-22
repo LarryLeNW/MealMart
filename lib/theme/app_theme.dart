@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // Grab's primary color is green
   static const Color primaryColor = Color(0xFF00B14F);
   static const Color secondaryColor = Color(0xFF676767);
   static const Color backgroundColor = Color(0xFFF5F5F5);
@@ -38,14 +37,8 @@ class AppTheme {
         fontSize: 18,
         fontWeight: FontWeight.bold,
       ),
-      bodyLarge: TextStyle(
-        color: textColor,
-        fontSize: 16,
-      ),
-      bodyMedium: TextStyle(
-        color: lightTextColor,
-        fontSize: 14,
-      ),
+      bodyLarge: TextStyle(color: textColor, fontSize: 16),
+      bodyMedium: TextStyle(color: lightTextColor, fontSize: 14),
     ),
     colorScheme: ColorScheme.fromSwatch().copyWith(
       primary: primaryColor,
