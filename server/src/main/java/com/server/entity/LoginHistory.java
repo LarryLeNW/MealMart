@@ -2,30 +2,34 @@ package com.server.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
+
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "login_history")
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class LoginHistory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    User user;
 
     @Column(name = "login_time", nullable = false)
-    private LocalDateTime loginTime;
+    LocalDateTime loginTime;
 
     @Column(name = "logout_time")
-    private LocalDateTime logoutTime;
+    LocalDateTime logoutTime;
 
     @Column(name = "ip_address", length = 45)
-    private String ipAddress;
+    String ipAddress;
 
     @Column(name = "user_agent", length = 255)
-    private String userAgent;
+    String userAgent;
 
 }

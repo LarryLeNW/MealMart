@@ -8,49 +8,52 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @Table(name = "user_addresses")
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserAddress {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long addressId;
+    Long addressId;
 
     @Column(nullable = false)
-    private Long userId;
+    Long userId;
 
     @Column(nullable = false, length = 150)
-    private String recipientName;
+    String recipientName;
 
     @Column(nullable = false, length = 20)
-    private String phone;
+    String phone;
 
     @Column(nullable = false, length = 255)
-    private String addressLine1;
+    String addressLine1;
 
     @Column(length = 255)
-    private String addressLine2;
+    String addressLine2;
 
     @Column(nullable = false, length = 100)
-    private String city;
+    String city;
 
     @Column(nullable = false, length = 100)
-    private String state;
+    String state;
 
     @Column(nullable = false, length = 20)
-    private String postalCode;
+    String postalCode;
 
     @Column(nullable = false, length = 100)
-    private String country;
+    String country;
 
     @Column(nullable = false)
-    private Boolean isDefault = false;
+    Boolean isDefault = false;
 
     @Column(nullable = false)
-    private LocalDateTime createdAt;
+    LocalDateTime createdAt;
 
     @Column(nullable = false)
-    private LocalDateTime updatedAt;
+    LocalDateTime updatedAt;
 
 }

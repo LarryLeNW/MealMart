@@ -16,7 +16,10 @@ public enum ErrorCode {
     USER_NOT_EXISTED(1005, "User not existed", HttpStatus.NOT_FOUND),
     UNAUTHENTICATED(1006, "Unauthenticated", HttpStatus.UNAUTHORIZED),
     UNAUTHORIZED(1007, "You do not have permission", HttpStatus.FORBIDDEN),
+    DUPLICATE_KEY(1002, "Exited Entity", HttpStatus.BAD_REQUEST),
     INVALID_DOB(1008, "Your age must be at least {min}", HttpStatus.BAD_REQUEST),
+    INVALID_REQUEST_BODY(1000, "Invalid Request Body", HttpStatus.BAD_REQUEST),
+    INVALID_FIELD_ACCESS(1009, "Invalid Access Field", HttpStatus.BAD_REQUEST);
     ;
 
     ErrorCode(int code, String message, HttpStatusCode statusCode) {
