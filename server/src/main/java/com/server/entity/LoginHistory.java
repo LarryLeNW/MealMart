@@ -28,49 +28,4 @@ public class LoginHistory {
     @Column(name = "user_agent", length = 255)
     private String userAgent;
 
-    // Constructors
-    public LoginHistory() {}
-
-    // Getters & Setters
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public LocalDateTime getLoginTime() {
-        return loginTime;
-    }
-    public void setLoginTime(LocalDateTime loginTime) {
-        this.loginTime = loginTime;
-    }
-
-    public LocalDateTime getLogoutTime() {
-        return logoutTime;
-    }
-    public void setLogoutTime(LocalDateTime logoutTime) {
-        this.logoutTime = logoutTime;
-    }
-
-    public String getIpAddress() {
-        return ipAddress;
-    }
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
-
-    public String getUserAgent() {
-        return userAgent;
-    }
-    public void setUserAgent(String userAgent) {
-        this.userAgent = userAgent;
-    }
 }
