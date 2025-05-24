@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
-import com.server.dto.request.ApiResponse;
+import com.server.dto.request.common.ApiResponse;
 
 
 @ControllerAdvice

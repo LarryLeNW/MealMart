@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.server.dto.request.PermissionRequest;
-import com.server.dto.response.PermissionResponse;
+import com.server.dto.request.autho.PermissionRequest;
+import com.server.dto.response.autho.PermissionResponse;
 import com.server.entity.Permission;
 import com.server.mapper.PermissionMapper;
 import com.server.repository.PermissionRepository;

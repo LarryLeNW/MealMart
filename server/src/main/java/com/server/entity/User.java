@@ -7,6 +7,8 @@ import java.util.Set;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.server.constant.UserStatus;
+
 import jakarta.persistence.*;
 
 import lombok.*;
@@ -29,12 +31,16 @@ public class User {
 
     String password;
     
-    String firstName;
-    
     LocalDate dob;
     
-    String lastName;
-
+    @Column(name = "email", nullable = false)
+    String email;
+    
+    @Builder.Default
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    UserStatus status = UserStatus.INACTIVE;
+    
     @ManyToMany
     Set<Role> roles;
     	

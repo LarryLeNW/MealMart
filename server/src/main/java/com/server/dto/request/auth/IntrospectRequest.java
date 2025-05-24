@@ -1,5 +1,4 @@
-package com.server.dto.request;
-
+package com.server.dto.request.auth;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -8,6 +7,6 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class RefreshRequest {
+public class IntrospectRequest {
     String token;
 }

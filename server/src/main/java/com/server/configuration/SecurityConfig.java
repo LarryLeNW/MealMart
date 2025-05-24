@@ -23,20 +23,19 @@ import com.server.constant.PublicEndpoint;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-	private final String[] PUBLIC_ENDPOINTS = { };
+	private final String[] PUBLIC_ENDPOINTS = {};
 
 	@Autowired
 	private CustomJwtDecoder customJwtDecoder;
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.GET, PublicEndpoint.PUBLIC_GET_ENDPOINTS)
-				.permitAll().requestMatchers(HttpMethod.POST, PublicEndpoint.PUBLIC_POST_ENDPOINTS).permitAll()
-				.requestMatchers(HttpMethod.PUT, PublicEndpoint.PUBLIC_PUT_ENDPOINTS).permitAll()
-				.requestMatchers(HttpMethod.DELETE,
-						PublicEndpoint.PUBLIC_DELETE_ENDPOINTS)
-				.permitAll().anyRequest()
-				.authenticated());
+		httpSecurity.authorizeHttpRequests(
+				request -> request.requestMatchers(HttpMethod.GET, PublicEndpoint.PUBLIC_GET_ENDPOINTS).permitAll()
+						.requestMatchers(HttpMethod.POST, PublicEndpoint.PUBLIC_POST_ENDPOINTS).permitAll()
+						.requestMatchers(HttpMethod.PUT, PublicEndpoint.PUBLIC_PUT_ENDPOINTS).permitAll()
+						.requestMatchers(HttpMethod.DELETE, PublicEndpoint.PUBLIC_DELETE_ENDPOINTS).permitAll()
+						.anyRequest().authenticated());
 
 		httpSecurity.oauth2ResourceServer(oauth2 -> oauth2
 				.jwt(jwtConfigurer -> jwtConfigurer.decoder(customJwtDecoder)

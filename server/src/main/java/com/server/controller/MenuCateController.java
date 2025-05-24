@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.server.dto.request.ApiResponse;
-import com.server.dto.request.UserUpdateRequest;
+import com.server.dto.request.common.ApiResponse;
 import com.server.dto.request.menuCate.MenuCateRequest;
 import com.server.dto.request.menuCate.MenuCateUpdateRequest;
-import com.server.dto.response.UserResponse;
+import com.server.dto.request.user.UserUpdateRequest;
+import com.server.dto.response.user.UserResponse;
 import com.server.entity.MenuCategory;
 import com.server.service.MenuCateService;
 import com.server.service.PermissionService;

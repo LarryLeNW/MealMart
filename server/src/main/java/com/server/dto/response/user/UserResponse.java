@@ -1,7 +1,9 @@
-package com.server.dto.response;
+package com.server.dto.response.user;
 
 import java.time.LocalDate;
 import java.util.Set;
+
+import com.server.dto.response.autho.RoleResponse;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

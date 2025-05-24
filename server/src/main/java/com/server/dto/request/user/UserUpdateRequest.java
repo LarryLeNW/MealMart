@@ -1,4 +1,4 @@
-package com.server.dto.request;
+package com.server.dto.request.user;
 
 import java.time.LocalDate;
 import java.util.List;

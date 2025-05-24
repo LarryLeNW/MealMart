@@ -6,10 +6,10 @@ import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.server.dto.request.ApiResponse;
-import com.server.dto.request.UserCreationRequest;
-import com.server.dto.request.UserUpdateRequest;
-import com.server.dto.response.UserResponse;
+import com.server.dto.request.common.ApiResponse;
+import com.server.dto.request.user.UserCreationRequest;
+import com.server.dto.request.user.UserUpdateRequest;
+import com.server.dto.response.user.UserResponse;
 import com.server.service.UserService;
 
 import lombok.AccessLevel;

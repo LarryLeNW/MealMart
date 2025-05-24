@@ -4,9 +4,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-import com.server.dto.request.UserCreationRequest;
-import com.server.dto.request.UserUpdateRequest;
-import com.server.dto.response.UserResponse;
+import com.server.dto.request.user.UserCreationRequest;
+import com.server.dto.request.user.UserUpdateRequest;
+import com.server.dto.response.user.UserResponse;
 import com.server.entity.User;
 
 

@@ -8,11 +8,11 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.server.dto.request.ApiResponse;
-import com.server.dto.request.UserUpdateRequest;
+import com.server.dto.request.common.ApiResponse;
 import com.server.dto.request.menuCate.MenuCateRequest;
 import com.server.dto.request.menuCate.MenuCateUpdateRequest;
-import com.server.dto.response.UserResponse;
+import com.server.dto.request.user.UserUpdateRequest;
+import com.server.dto.response.user.UserResponse;
 import com.server.entity.MenuCategory;
 import com.server.entity.User;
 import com.server.exception.AppException;

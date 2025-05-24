@@ -26,12 +26,12 @@ import com.nimbusds.jose.crypto.MACSigner;
 import com.nimbusds.jose.crypto.MACVerifier;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
-import com.server.dto.request.AuthenticationRequest;
-import com.server.dto.request.IntrospectRequest;
-import com.server.dto.request.LogoutRequest;
-import com.server.dto.request.RefreshRequest;
-import com.server.dto.response.AuthenticationResponse;
-import com.server.dto.response.IntrospectResponse;
+import com.server.dto.request.auth.AuthenticationRequest;
+import com.server.dto.request.auth.IntrospectRequest;
+import com.server.dto.request.auth.LogoutRequest;
+import com.server.dto.request.auth.RefreshRequest;
+import com.server.dto.response.auth.AuthenticationResponse;
+import com.server.dto.response.common.IntrospectResponse;
 import com.server.entity.InvalidatedToken;
 import com.server.entity.User;
 import com.server.exception.AppException;
@@ -122,7 +122,7 @@ public class AuthenticationService {
 		return AuthenticationResponse.builder().token(token).authenticated(true).build();
 	}
 
-	private String generateToken(User user) {
+	String generateToken(User user) {
 		JWSHeader header = new JWSHeader(JWSAlgorithm.HS256);
 
 		JWTClaimsSet jwtClaimsSet = new JWTClaimsSet.Builder().subject(user.getUsername()).issuer("devteria.com")
@@ -143,7 +143,7 @@ public class AuthenticationService {
 		}
 	}
 
-	private SignedJWT verifyToken(String token, boolean isRefresh) throws JOSEException, ParseException {
+	SignedJWT verifyToken(String token, boolean isRefresh) throws JOSEException, ParseException {
 		JWSVerifier verifier = new MACVerifier(SIGNER_KEY.getBytes());
 
 		SignedJWT signedJWT = SignedJWT.parse(token);
@@ -164,7 +164,7 @@ public class AuthenticationService {
 		return signedJWT;
 	}
 
-	private String buildScope(User user) {
+	String buildScope(User user) {
 		StringJoiner stringJoiner = new StringJoiner(" ");
 
 		if (!CollectionUtils.isEmpty(user.getRoles()))

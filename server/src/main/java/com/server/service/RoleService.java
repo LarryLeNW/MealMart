@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.server.dto.request.RoleRequest;
-import com.server.dto.response.RoleResponse;
+import com.server.dto.request.autho.RoleRequest;
+import com.server.dto.response.autho.RoleResponse;
 import com.server.mapper.RoleMapper;
 import com.server.repository.PermissionRepository;
 import com.server.repository.RoleRepository;

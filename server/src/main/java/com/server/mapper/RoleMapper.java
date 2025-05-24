@@ -3,8 +3,8 @@ package com.server.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import com.server.dto.request.RoleRequest;
-import com.server.dto.response.RoleResponse;
+import com.server.dto.request.autho.RoleRequest;
+import com.server.dto.response.autho.RoleResponse;
 import com.server.entity.Role;
 
 

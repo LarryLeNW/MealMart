@@ -11,9 +11,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.server.constant.PredefinedRole;
-import com.server.dto.request.UserCreationRequest;
-import com.server.dto.request.UserUpdateRequest;
-import com.server.dto.response.UserResponse;
+import com.server.dto.request.user.UserCreationRequest;
+import com.server.dto.request.user.UserUpdateRequest;
+import com.server.dto.response.user.UserResponse;
 import com.server.entity.Role;
 import com.server.entity.User;
 import com.server.exception.AppException;
