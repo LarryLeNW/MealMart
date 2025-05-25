@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:v1_ecommerce/models/food_item.dart';
+import 'package:v1_ecommerce/shared/modules/authentication/auth.dart';
+import 'package:v1_ecommerce/shared/modules/authentication/bloc/authentication_bloc.dart';
+import 'package:v1_ecommerce/shared/modules/authentication/bloc/authentication_bloc_public.dart';
+import 'package:v1_ecommerce/shared/modules/authentication/bloc/authentication_state.dart';
 import 'package:v1_ecommerce/widgets/auth/login_dialog.dart';
 import 'package:v1_ecommerce/widgets/home/about.dart';
 import 'package:v1_ecommerce/widgets/home/category_service.dart';
 import '../models/food_category.dart';
-import '../models/restaurant.dart';
 import '../screens/restaurant_screen.dart';
 import '../screens/search_screen.dart';
 import '../widgets/home/category_item.dart';
 import '../widgets/home/promotion_banner.dart';
 import '../widgets/home/top_food_card.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -44,16 +48,34 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('HELLO FRESH'),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(20),
-              onTap: () => _openLoginDialog(context),
-              child: const CircleAvatar(
-                backgroundColor: Color.fromARGB(255, 162, 236, 128),
-                child: Text('Larry'),
-              ),
-            ),
+          BlocBuilder<AuthenticationBloc, AuthenticationState>(
+            builder: (context, state) {
+              if (state is Authenticated && state.user != null) {
+                return Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Icon(
+                          Icons.account_circle_outlined,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              } else {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: ElevatedButton(
+                    onPressed: () => _openLoginDialog(context),
+                    child: Text("Đăng nhập ngay"),
+                  ),
+                );
+              }
+            },
           ),
         ],
       ),
