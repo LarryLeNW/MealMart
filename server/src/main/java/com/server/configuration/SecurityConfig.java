@@ -23,14 +23,16 @@ import com.server.constant.PublicEndpoint;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-	private final String[] PUBLIC_ENDPOINTS = {};
 
 	@Autowired
 	private CustomJwtDecoder customJwtDecoder;
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.authorizeHttpRequests(
+		httpSecurity
+		.cors()
+		.and()
+		.authorizeHttpRequests(
 				request -> request.requestMatchers(HttpMethod.GET, PublicEndpoint.PUBLIC_GET_ENDPOINTS).permitAll()
 						.requestMatchers(HttpMethod.POST, PublicEndpoint.PUBLIC_POST_ENDPOINTS).permitAll()
 						.requestMatchers(HttpMethod.PUT, PublicEndpoint.PUBLIC_PUT_ENDPOINTS).permitAll()
