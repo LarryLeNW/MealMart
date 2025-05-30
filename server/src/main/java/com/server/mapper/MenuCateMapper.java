@@ -2,8 +2,8 @@ package com.server.mapper;
 
 import org.mapstruct.Mapper;
 
-import com.server.dto.request.menuCate.MenuCateRequest;
-import com.server.entity.MenuCategory;
+import com.server.dto.request.menu.MenuCateRequest;
+import com.server.entity.product.MenuCategory;
 
 @Mapper(componentModel = "spring")
 public interface MenuCateMapper {

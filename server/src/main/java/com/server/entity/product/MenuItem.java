@@ -1,5 +1,6 @@
-package com.server.entity;
+package com.server.entity.product;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -19,11 +20,17 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import jakarta.persistence.JoinColumn;
 
 
+@ToString
 @Entity
+@Getter
+@Setter
 @Table(name = "menu_item")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class MenuItem {
@@ -36,17 +43,17 @@ public class MenuItem {
 	@Column(columnDefinition = "TEXT")
 	String description;
 	
-	Integer calories;
+	Double calories;
 	
-	Long price;
+	BigDecimal price;
 	
 	@Max(value = 99)
 	@Min(value = 0)
 	@Column(name = "discount")
-	Long discount;
+	Float discount;
 
     @Column(name = "stars")
-    Double stars;
+    Integer stars;
     
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
@@ -66,5 +73,5 @@ public class MenuItem {
     @UpdateTimestamp
     @Column(name = "updated_at")
     LocalDateTime updatedAt;
-
+    
 }

@@ -1,9 +1,10 @@
-package com.server.entity;
+package com.server.entity.auth;
 
-import java.util.Date;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -15,9 +16,12 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-public class InvalidatedToken {
+public class Role {
     @Id
-    String id;
+    String name;
 
-    Date expiryTime;
+    String description;
+
+    @ManyToMany
+    Set<Permission> permissions;
 }

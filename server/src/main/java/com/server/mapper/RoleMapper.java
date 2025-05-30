@@ -5,7 +5,7 @@ import org.mapstruct.Mapping;
 
 import com.server.dto.request.autho.RoleRequest;
 import com.server.dto.response.autho.RoleResponse;
-import com.server.entity.Role;
+import com.server.entity.auth.Role;
 
 
 @Mapper(componentModel = "spring")

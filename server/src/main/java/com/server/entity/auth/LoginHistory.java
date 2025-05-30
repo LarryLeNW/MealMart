@@ -1,4 +1,4 @@
-package com.server.entity;
+package com.server.entity.auth;
 
 
 import jakarta.persistence.*;
@@ -6,6 +6,8 @@ import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDateTime;
+
+import com.server.entity.user.User;
 
 @Entity
 @Table(name = "login_history")

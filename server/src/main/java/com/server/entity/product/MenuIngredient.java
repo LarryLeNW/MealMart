@@ -1,4 +1,4 @@
-package com.server.entity;
+package com.server.entity.product;
 
 import java.util.Set;
 

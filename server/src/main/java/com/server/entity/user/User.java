@@ -1,4 +1,4 @@
-package com.server.entity;
+package com.server.entity.user;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import com.server.constant.UserStatus;
+import com.server.entity.auth.Role;
 
 import jakarta.persistence.*;
 

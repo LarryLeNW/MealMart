@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.server.constant.PredefinedRole;
-import com.server.entity.Role;
-import com.server.entity.User;
+import com.server.entity.auth.Role;
+import com.server.entity.user.User;
 import com.server.repository.RoleRepository;
 import com.server.repository.UserRepository;
 

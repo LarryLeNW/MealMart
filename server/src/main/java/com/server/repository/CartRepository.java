@@ -3,7 +3,8 @@ package com.server.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.server.entity.auth.InvalidatedToken;
+import com.server.entity.cart.Cart;
 
 @Repository
-public interface InvalidatedTokenRepository extends JpaRepository<InvalidatedToken, String> {}
+public interface CartRepository extends JpaRepository<Cart, Integer> {
+}

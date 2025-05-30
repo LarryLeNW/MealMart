@@ -7,7 +7,7 @@ import org.mapstruct.MappingTarget;
 import com.server.dto.request.user.UserCreationRequest;
 import com.server.dto.request.user.UserUpdateRequest;
 import com.server.dto.response.user.UserResponse;
-import com.server.entity.User;
+import com.server.entity.user.User;
 
 
 @Mapper(componentModel = "spring")

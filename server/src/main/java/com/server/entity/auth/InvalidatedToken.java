@@ -1,5 +1,6 @@
-package com.server.entity;
+package com.server.entity.auth;
 
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -14,9 +15,9 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-public class Permission {
+public class InvalidatedToken {
     @Id
-    String name;
+    String id;
 
-    String description;
+    Date expiryTime;
 }

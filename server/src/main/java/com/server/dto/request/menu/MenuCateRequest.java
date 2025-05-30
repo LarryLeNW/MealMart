@@ -1,4 +1,4 @@
-package com.server.dto.request.menuCate;
+package com.server.dto.request.menu;
 
 import org.hibernate.validator.constraints.URL;
 
